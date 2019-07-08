@@ -48,52 +48,105 @@ class _ChatDetailsState extends State<ChatDetails> {
       body: Stack(
         children: <Widget>[
           Container(
-              color: Colors.white,
-              child: Column(
+            color: Colors.white,
+            child: Column(
+              children: <Widget>[
+                Flexible(
+                  child: ListView.builder(
+                    itemCount: 1,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              'Today',
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 12),
+                            ),
+                            Bubble(
+                              message: 'Hi How are you ?',
+                              isMe: true,
+                            ),
+                            Bubble(
+                              message: 'have you seen the docs yet?',
+                              isMe: true,
+                            ),
+                            Text(
+                              'Feb 25, 2018',
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 12),
+                            ),
+                            Bubble(
+                              message: 'i am fine !',
+                              isMe: false,
+                            ),
+                            Bubble(
+                              message: 'yes i\'ve seen the docs',
+                              isMe: false,
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            width: MediaQuery.of(context).size.width,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(color: Colors.white, boxShadow: [
+                BoxShadow(
+                  color: Colors.grey[300],
+                  offset: Offset(-2, 0),
+                  blurRadius: 5,
+                ),
+              ]),
+              child: Row(
                 children: <Widget>[
-                  Flexible(
-                    child: ListView.builder(
-                      itemCount: 1,
-                      shrinkWrap: true,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Column(
-                            children: <Widget>[
-                              Text(
-                                'Today',
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 12),
-                              ),
-                              Bubble(
-                                message: 'Hi How are you ?',
-                                isMe: true,
-                              ),
-                              Bubble(
-                                message: 'have you seen the docs yet?',
-                                isMe: true,
-                              ),
-                              Text(
-                                'Feb 25, 2018',
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 12),
-                              ),
-                              Bubble(
-                                message: 'i am fine !',
-                                isMe: false,
-                              ),
-                              Bubble(
-                                message: 'yes i\'ve seen the docs',
-                                isMe: false,
-                              ),
-                            ],
-                          ),
-                        );
-                      },
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.camera,
+                      color: Color(0xff3E8DF3),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.image,
+                      color: Color(0xff3E8DF3),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                  ),
+                  Expanded(
+                    child: TextFormField(
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        hintText: 'Enter Message',
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.send,
+                      color: Color(0xff3E8DF3),
                     ),
                   ),
                 ],
-              ))
+              ),
+            ),
+          )
         ],
       ),
     );

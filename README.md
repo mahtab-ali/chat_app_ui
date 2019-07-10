@@ -6,6 +6,8 @@ Flutter tutorial on converting a minimal chat app UI desing into fully functiona
 # Screenshots
 
 ![chat app ui](https://i.ibb.co/BsdN7k6/Chat-App.png)
+![chat app ui](https://i.ibb.co/B43S32W/Messages.png)
+![chat app ui](https://i.ibb.co/wMzC7Vx/Message-Details.png)
 
 # Youtube Tutorial
 
